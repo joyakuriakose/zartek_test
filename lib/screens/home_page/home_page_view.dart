@@ -16,7 +16,6 @@ class HomeView extends GetView<HomeViewController> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Assuming MyUtils is correctly implemented
         MyUtils.hideKeyboard();
       },
       child: Scaffold(
@@ -63,7 +62,7 @@ class HomeView extends GetView<HomeViewController> {
                     SizedBox(width: Get.width * 0.05),
                     GestureDetector(
                       onTap: (){
-                        Get.offAllNamed(Routes.first); // Make sure 'Routes.login' is the correct route name for your login page
+                        Get.offAllNamed(Routes.first);
                       },
                       child: Text(
                         'Log Out',
