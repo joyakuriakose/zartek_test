@@ -80,7 +80,6 @@ class HomeView extends GetView<HomeViewController> {
           ),
         ),
         appBar: AppBar(
-          title: Text('Top Drawer and TabBar'),
           backgroundColor: Colors.transparent,
           elevation: 0,
           iconTheme: IconThemeData(
