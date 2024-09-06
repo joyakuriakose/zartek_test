@@ -16,7 +16,7 @@ class FirstScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("assets/images/img.png"),
+            Image.asset("assets/images/img.png",height: 160,width: 160,),
             SizedBox(height: Get.height * 0.1),
             GestureDetector(
               onTap: () {
@@ -33,8 +33,8 @@ class FirstScreen extends StatelessWidget {
                     children: [
                       // Ensure the SVG asset is correctly placed and referenced
                       Container(
-                        width: 20,
-                        height: 20,
+                        width: 25,
+                        height: 25,
                         decoration: BoxDecoration(shape: BoxShape.circle,color: Colors.white,),
                         child: Center(
                           child: Image.asset(
