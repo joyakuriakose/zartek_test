@@ -33,8 +33,8 @@ class FirstScreen extends StatelessWidget {
                     children: [
                       // Ensure the SVG asset is correctly placed and referenced
                       Container(
-                        width: 25,
-                        height: 25,
+                        width: 20,
+                        height: 20,
                         decoration: BoxDecoration(shape: BoxShape.circle,color: Colors.white,),
                         child: Center(
                           child: Image.asset(

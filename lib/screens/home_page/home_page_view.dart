@@ -63,7 +63,7 @@ class HomeView extends GetView<HomeViewController> {
                     SizedBox(width: Get.width * 0.05),
                     GestureDetector(
                       onTap: (){
-                        Get.offAllNamed(Routes.login); // Make sure 'Routes.login' is the correct route name for your login page
+                        Get.offAllNamed(Routes.first); // Make sure 'Routes.login' is the correct route name for your login page
                       },
                       child: Text(
                         'Log Out',
@@ -259,7 +259,7 @@ class HomeView extends GetView<HomeViewController> {
                                 Text(
                                   'Customizations Available',
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 17,
                                     color: Colors.red,
                                   ),
                                 ),

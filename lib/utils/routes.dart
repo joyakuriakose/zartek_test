@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:zartek_test/screens/first_screen.dart';
 
 import '../screens/cart/cart_bindings.dart';
 import '../screens/cart/cart_view.dart';
@@ -12,6 +13,7 @@ import '../screens/splash_screen.dart';
 
 class Routes {
   static const splash = '/';
+  static const first = '/';
   static const login = '/login';
   static const home = '/home';
   static const cart = '/cartPage';
@@ -20,6 +22,10 @@ class Routes {
     GetPage(
       name: splash,
       page: () => SplashScreen(),
+    ),
+    GetPage(
+      name: first,
+      page: () => FirstScreen(),
     ),
     GetPage(
       binding: LoginViewBindings(),
