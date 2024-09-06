@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "100105880647",
+    "project_id": "zartektest-d70a2",
+    "storage_bucket": "zartektest-d70a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100105880647:android:75a29829582131e4e19d62",
+        "android_client_info": {
+          "package_name": "com.example.zartek_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1w-ks5dq9Iv-324Tsj0E9wDHqDp1JpHs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
