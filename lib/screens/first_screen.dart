@@ -46,7 +46,7 @@ class FirstScreen extends StatelessWidget {
                       ),
                       SizedBox(width: Get.width * 0.15), // Add spacing between icon and text
                       Text(
-                        "Google Sign In",
+                        "Google",
                         style: TextStyle(color: Colors.white, fontSize: 18),
                       ),
                     ],
@@ -76,7 +76,7 @@ class FirstScreen extends StatelessWidget {
                       ),
                       SizedBox(width: Get.width * 0.15), // Add spacing between icon and text
                       Text(
-                        "Google Sign In",
+                        "Phone",
                         style: TextStyle(color: Colors.white, fontSize: 18),
                       ),
                     ],

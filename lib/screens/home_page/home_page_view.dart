@@ -61,9 +61,14 @@ class HomeView extends GetView<HomeViewController> {
                   children: [
                     Icon(Icons.logout),
                     SizedBox(width: Get.width * 0.05),
-                    Text(
-                      'Log Out',
-                      style: TextStyle(color: Colors.grey),
+                    GestureDetector(
+                      onTap: (){
+                        Get.offAllNamed(Routes.login); // Make sure 'Routes.login' is the correct route name for your login page
+                      },
+                      child: Text(
+                        'Log Out',
+                        style: TextStyle(color: Colors.grey),
+                      ),
                     ),
                   ],
                 ),

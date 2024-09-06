@@ -3,16 +3,16 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import '../../firebase_controller/fire_controller.dart';
 import '../../models/home_page_model.dart';
 
-// Assuming your model classes are imported
 
 class HomeViewController extends GetxController {
-  var homePageModel = HomePageModel().obs;  // Observable HomePageModel
-  var isLoading = true.obs;  // Loading state
-  var cart = <Dish, int>{}.obs; // Cart with dish and its quantity
+  //final FirebaseController firebaseController = Get.find<FirebaseController>();
+  var homePageModel = HomePageModel().obs;
+  var isLoading = true.obs;
+  var cart = <Dish, int>{}.obs;
 
-  // Base URL
   final String baseUrl = 'https://run.mocky.io/v3/18e8dae4-f39d-46bc-9cf6-9f8b97c32f9c';
   void addToCart(Dish dish) {
     if (cart.containsKey(dish)) {
@@ -33,13 +33,12 @@ class HomeViewController extends GetxController {
   }
 
   void placeOrder() {
-    // Logic to place order
     Get.defaultDialog(
       title: 'Order',
       middleText: 'Order successfully placed',
       onConfirm: () {
-        cart.clear(); // Clear cart after placing the order
-        Get.offAllNamed('/home'); // Redirect to home page
+        cart.clear();
+        Get.offAllNamed('/home');
       },
       textConfirm: 'OK',
     );
@@ -50,10 +49,9 @@ class HomeViewController extends GetxController {
     super.onInit();
   }
 
-  // Method to fetch data
   void fetchHomePageDetails() async {
     try {
-      isLoading(true);  // Set loading to true
+      isLoading(true);
       final response = await http.get(Uri.parse(baseUrl));
 
       if (response.statusCode == 200) {
@@ -64,21 +62,21 @@ class HomeViewController extends GetxController {
     } catch (e) {
       Get.snackbar('Error', e.toString());
     } finally {
-      isLoading(false);  // Set loading to false
+      isLoading(false);
     }
   }
 }
 // class HomeViewController extends GetxController with SingleGetTickerProviderMixin {
 //   late TabController tabController;
-//   final int tabCount = 4; // Update to match the number of tabs
+//   final int tabCount = 4;
 //
-//   RxList<Dish> allDishes = <Dish>[].obs; // Observable list of dishes
+//   RxList<Dish> allDishes = <Dish>[].obs;
 //
 //   @override
 //   void onInit() {
 //     super.onInit();
 //     tabController = TabController(length: tabCount, vsync: this);
-//     fetchHomePageData(); // Fetch data when initializing the controller
+//     fetchHomePageData();
 //   }
 //
 //   @override
@@ -97,7 +95,7 @@ class HomeViewController extends GetxController {
 //         var data = json.decode(response.body);
 //         HomePageModel homePageModel = HomePageModel.fromJson(data);
 //
-//         // Extract all dishes from categories
+//
 //         List<Dish> dishes = [];
 //         for (var category in homePageModel.categories ?? []) {
 //           if (category.dishes != null) {
@@ -105,7 +103,7 @@ class HomeViewController extends GetxController {
 //           }
 //         }
 //
-//         allDishes.value = dishes; // Update observable list
+//         allDishes.value = dishes;
 //       } else {
 //         Get.snackbar('Error', 'Failed to load data');
 //       }

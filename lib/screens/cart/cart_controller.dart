@@ -7,7 +7,7 @@ import '../home_page/home_page_controller.dart';
 //
 class Dish {
   final String? name;
-  final double? price; // Ensure this is a double
+  final double? price;
   final String? description;
 
   Dish({this.name, this.price, this.description});

@@ -22,11 +22,10 @@ class FirebaseController extends GetxController {
     _firebaseUser.bindStream(_auth.authStateChanges());
   }
 
-  // Google Sign-In
   Future<void> signInWithGoogle() async {
     try {
       final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
-      if (googleUser == null) return; // The user canceled the sign-in
+      if (googleUser == null) return;
 
       final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
       final AuthCredential credential = GoogleAuthProvider.credential(
@@ -35,28 +34,25 @@ class FirebaseController extends GetxController {
       );
 
       await _auth.signInWithCredential(credential);
-      Get.offAll(() => Dashboard()); // Navigate to dashboard after successful login
+      Get.offAll(() => Dashboard());
     } catch (error) {
       Get.snackbar("Error", "Google Sign-In failed: $error",
           snackPosition: SnackPosition.BOTTOM);
     }
   }
 
-  // Function to create a user (already provided)
   Future<void> createUser(String firstName, String lastName, String email, String password) async {
-    // Your createUser function implementation
+
   }
 
-  // Login function (already provided)
   Future<void> login(String email, String password) async {
-    // Your login function implementation
+
   }
 
-  // Sign-out function (already provided)
   Future<void> signOut() async {
     try {
       await _auth.signOut();
-      Get.offAllNamed(Routes.login); // Ensure `Routes.login` exists
+      Get.offAllNamed(Routes.login);
     } catch (error) {
       Get.snackbar("Error", "Error while signing out: $error",
           snackPosition: SnackPosition.BOTTOM);
